@@ -21,7 +21,7 @@
                     <h1 class="title">To do List</h1>
 
                     <ul class="list-group">
-                        <li v-for="toDo in this.toDoList" class="list-group-item text-start text-uppercase">{{toDo}}</li>
+                        <li v-for="toDo in this.toDoList" class="list-group-item text-start text-uppercase">{{toDo.text}}</li>
                     </ul>
 
                     <div class="input-group flex-nowrap mt-3">

@@ -21,10 +21,27 @@ createApp({
             })
         },
         addTask(){
-            // console.log(this.newTask);
-            this.toDoList.push(this.newTask);
-            this.newTask= "";
-            console.log(this.toDoList)
+            console.log(this.newTask);
+            // this.newTask= "";
+            $task = {
+                text: this.newTask,
+                done: false
+            }
+
+            axios
+            .post('./server.php', $task, {
+                header:{
+                    'Content-Type': 'multipart/form-data',
+                }
+            })
+            .then((res) => {
+                this.toDoList = res.data;
+                this.toDoList.push(this.newTask);
+                this.newTask = "";
+            })
+            .catch((err) => {
+                console.log(err)
+            })
         }
     },
     mounted() {

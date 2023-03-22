@@ -1,0 +1,21 @@
+ul,
+ol,
+menu{
+    list-style: none;
+}
+
+.container-custom{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.main-section{
+    border: 1px solid black;
+    background-color: #001632;
+    height: 100vh;
+}
+
+.title{
+    font-size: 3rem;
+    color: grey;
+}

@@ -3,7 +3,8 @@ const { createApp } = Vue
 createApp({
 	data() {
 		return {
-            toDoList: []
+            toDoList: [],
+            newTask: ""
 		}
 	},
     methods:{
@@ -15,6 +16,15 @@ createApp({
                 this.toDoList = res.data;
                 // console.log(this.toDoList);
             })
+            .catch((err) => {
+                this.toDoList = [];
+            })
+        },
+        addTask(){
+            // console.log(this.newTask);
+            this.toDoList.push(this.newTask);
+            this.newTask= "";
+            console.log(this.toDoList)
         }
     },
     mounted() {

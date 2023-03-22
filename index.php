@@ -24,6 +24,11 @@
                         <li v-for="toDo in this.toDoList" class="list-group-item text-start text-uppercase">{{toDo}}</li>
                     </ul>
 
+                    <div class="input-group flex-nowrap mt-3">
+                        <input @keyup.enter="addTask" v-model="newTask" name="todo" class="form-control" type="text" placeholder="Inserisci elemento">
+                        <span class="input-group-text" id="addon-wrapping">Inserisci</span>
+                    </div>
+
                 </div>
             </section>
 

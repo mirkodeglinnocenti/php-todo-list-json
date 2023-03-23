@@ -23,14 +23,13 @@ createApp({
         addTask(){
             console.log(this.newTask);
             // this.newTask= "";
-            $task = {
-                text: this.newTask,
-                done: false
+             let data = {
+                todo: this.newTask,
             }
 
             axios
-            .post('./server.php', $task, {
-                header:{
+            .post('./server.php', data, {
+                headers:{
                     'Content-Type': 'multipart/form-data',
                 }
             })
